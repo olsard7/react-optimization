@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import List from "./List";
 import { data } from "./DATA";
 import "./styles.css";
@@ -8,13 +8,23 @@ const App = () => {
   const [selected, setSelected] = useState([]);
 
   // Select or unselect the given item
-  const toggleItem = (item) => {
-    if (!selected.includes(item)) {
-      setSelected([...selected, item]);
-    } else {
-      setSelected(selected.filter((current) => current !== item));
-    }
-  };
+  // const toggleItem = (item) => {
+  //   if (!selected.includes(item)) {
+  //     setSelected([...selected, item]);
+  //   } else {
+  //     setSelected(selected.filter((current) => current !== item));
+  //   }
+  // };
+
+  const toggleItem = useCallback(
+    (item) =>
+      setSelected((prevSelected) =>
+        !prevSelected.includes(item)
+          ? [...prevSelected, item]
+          : prevSelected.filter((current) => current !== item)
+      ),
+    []
+  );
 
   return (
     <div className="App">

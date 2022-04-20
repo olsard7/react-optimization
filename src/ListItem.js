@@ -14,7 +14,7 @@ const expensiveOperation = (selected) => {
   return total;
 };
 
-const ListItem = ({ name, selected, onClick }) => {
+const ListItem = ({ item, selected, onClick }) => {
   // Run an expensive operation to simulate a load
   // In real-world JS applications, this could be either a custom
   // JS elaboration or a complex render.
@@ -23,9 +23,9 @@ const ListItem = ({ name, selected, onClick }) => {
   return (
     <li
       style={selected ? { textDecoration: "line-through" } : undefined}
-      onClick={onClick}
+      onClick={() => onClick(item)}
     >
-      {name}
+      {item.name}
     </li>
   );
 };
