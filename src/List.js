@@ -1,10 +1,10 @@
-import ListItem from "./ListItem";
+import MemoisedListItem from "./ListItem";
 
 const List = ({ data, selectedItems, toggleItem }) => {
   return (
     <ul>
       {data.map((item) => (
-        <ListItem
+        <MemoisedListItem
           key={item.id}
           name={item.name}
           selected={selectedItems.includes(item)}

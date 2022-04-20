@@ -1,6 +1,7 @@
 import { useState } from "react";
 import List from "./List";
 import { data } from "./DATA";
+import "./styles.css";
 
 const App = () => {
   // An array containing the selected items

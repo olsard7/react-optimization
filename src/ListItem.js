@@ -1,3 +1,4 @@
+import React from "react";
 // This is an example of an expensive JS operation that we might
 // execute in the render function to simulate a load.
 // In real-world applications, this operation could be either a custom
@@ -29,4 +30,6 @@ const ListItem = ({ name, selected, onClick }) => {
   );
 };
 
-export default ListItem;
+const MemoisedListItem = React.memo(ListItem);
+
+export default MemoisedListItem;
