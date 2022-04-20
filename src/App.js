@@ -7,15 +7,6 @@ const App = () => {
   // An array containing the selected items
   const [selected, setSelected] = useState([]);
 
-  // Select or unselect the given item
-  // const toggleItem = (item) => {
-  //   if (!selected.includes(item)) {
-  //     setSelected([...selected, item]);
-  //   } else {
-  //     setSelected(selected.filter((current) => current !== item));
-  //   }
-  // };
-
   const toggleItem = useCallback(
     (item) =>
       setSelected((prevSelected) =>
